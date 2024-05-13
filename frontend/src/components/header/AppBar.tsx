@@ -128,7 +128,7 @@ const Header = (): React.ReactNode => {
             }}
             startIcon={<FlagIcon />}
             onClick={() => {
-              router.replace(`/country/new`);
+              router.replace(`/countries/new`);
             }}
           >
             Créer un pays
