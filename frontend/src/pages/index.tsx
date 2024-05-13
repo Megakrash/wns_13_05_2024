@@ -1,3 +1,9 @@
+import LayoutFull from "@/components/layout/Layout";
+
 export default function Home() {
-  return <h1>Hello, wilder !</h1>;
+  return (
+    <LayoutFull title="Home">
+      <h1>Youhou</h1>
+    </LayoutFull>
+  );
 }
