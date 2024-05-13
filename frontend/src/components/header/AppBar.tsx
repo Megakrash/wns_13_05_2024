@@ -7,8 +7,6 @@ import {
   Toolbar,
   Tooltip,
   Typography,
-  useMediaQuery,
-  useTheme,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import PublicIcon from "@mui/icons-material/Public";
@@ -19,20 +17,8 @@ import { VariablesColors } from "@/styles/Variables.colors";
 const colors = new VariablesColors();
 const { colorDarkGrey, colorOrange, colorLightOrange } = colors;
 
-const buttonStyles = {
-  color: "white",
-  "& .MuiButton-startIcon": {
-    marginRight: "-4px",
-  },
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-};
-
 const Header = (): React.ReactNode => {
   const router = useRouter();
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("lg"));
 
   return (
     <AppBar position="static" sx={{ backgroundColor: colorDarkGrey }}>
@@ -44,7 +30,8 @@ const Header = (): React.ReactNode => {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: "center",
+          gap: "50px",
         }}
       >
         {/* Mobile Menu */}
@@ -114,22 +101,6 @@ const Header = (): React.ReactNode => {
             gap: "15px",
           }}
         >
-          {/* Post country Button */}
-          <Button
-            variant="contained"
-            size="large"
-            type="button"
-            sx={{
-              backgroundColor: colorLightOrange,
-              fontWeight: 550,
-            }}
-            startIcon={<FlagIcon />}
-            onClick={() => {
-              router.replace(`/country/new`);
-            }}
-          >
-            Créer un pays
-          </Button>
           {/* Search country Button */}
           <Button
             variant="contained"
@@ -145,6 +116,22 @@ const Header = (): React.ReactNode => {
             }}
           >
             Rechercher un pays
+          </Button>
+          {/* Post country Button */}
+          <Button
+            variant="contained"
+            size="large"
+            type="button"
+            sx={{
+              backgroundColor: colorLightOrange,
+              fontWeight: 550,
+            }}
+            startIcon={<FlagIcon />}
+            onClick={() => {
+              router.replace(`/country/new`);
+            }}
+          >
+            Créer un pays
           </Button>
         </Box>
       </Toolbar>

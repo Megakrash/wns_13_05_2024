@@ -7,7 +7,7 @@ import BurgerItems from "./components/BurgerItems";
 import BurgerHeader from "./components/BurgerHeader";
 
 const colors = new VariablesColors();
-const { colorOrange, colorDarkOrange } = colors;
+const { colorDarkOrange } = colors;
 
 const BurgerMenu = () => {
   const router = useRouter();
